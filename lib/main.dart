@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterstarterpack2/InputWidgets/globalKey.dart';
 
 import 'package:flutterstarterpack2/InputWidgets/textField.dart';
 import 'package:flutterstarterpack2/InputWidgets/textFormField.dart';
@@ -13,6 +14,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: TextFormFieldWidget());
+    return MaterialApp(home: GlobalKeyUsage());
   }
 }
