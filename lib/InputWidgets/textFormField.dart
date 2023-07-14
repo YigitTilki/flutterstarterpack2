@@ -13,7 +13,7 @@ class TextFormFieldWidget extends StatefulWidget {
 
 class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController controller = new TextEditingController();
+  final TextEditingController controller = TextEditingController();
   final GlobalKey<FlutterPwValidatorState> validatorKey =
       GlobalKey<FlutterPwValidatorState>();
 
