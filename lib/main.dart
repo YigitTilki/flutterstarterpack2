@@ -6,6 +6,7 @@ import 'package:flutterstarterpack2/InputWidgets/steepperWidget.dart';
 
 import 'package:flutterstarterpack2/InputWidgets/textField.dart';
 import 'package:flutterstarterpack2/InputWidgets/textFormField.dart';
+import 'package:flutterstarterpack2/Prac/custom_font_drawer_inkwell.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +18,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: StepperWidget());
+    return MaterialApp(
+        theme: ThemeData(primarySwatch: Colors.indigo, fontFamily: "Nemesis"),
+        home: const CustomFont());
   }
 }
