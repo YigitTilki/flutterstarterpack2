@@ -6,7 +6,7 @@ import 'package:flutterstarterpack2/InputWidgets/steepperWidget.dart';
 
 import 'package:flutterstarterpack2/InputWidgets/textField.dart';
 import 'package:flutterstarterpack2/InputWidgets/textFormField.dart';
-import 'package:flutterstarterpack2/Prac/custom_font_drawer_inkwell.dart';
+import 'package:flutterstarterpack2/Prac/main_page.dart';
 
 void main() {
   runApp(const MyApp());
