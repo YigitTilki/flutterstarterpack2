@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:flutter_pw_validator/Resource/Strings.dart';
-import 'package:flutter_pw_validator/Utilities/Validator.dart';
+//import 'package:flutter_pw_validator/Resource/Strings.dart';
+//import 'package:flutter_pw_validator/Utilities/Validator.dart';
 import 'package:flutter_pw_validator/flutter_pw_validator.dart';
 
 class TextFormFieldWidget extends StatefulWidget {
@@ -23,7 +23,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("TextFormField"),
+        title: const Text("TextFormField"),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -35,7 +35,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
               children: [
                 TextFormField(
                   //initialValue: "Yiğit Tilki",
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Username",
                     hintText: "Username",
                     border: OutlineInputBorder(),
@@ -51,12 +51,12 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                     }
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 12,
                 ),
                 TextFormField(
                   keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Email",
                     hintText: "Email",
                     border: OutlineInputBorder(),
@@ -72,7 +72,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                     }
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 12,
                 ),
                 TextFormField(
@@ -80,7 +80,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                   obscuringCharacter: "☻",
                   controller: controller,
                   keyboardType: TextInputType.visiblePassword,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Password",
                     hintText: "Password",
                     border: OutlineInputBorder(),
@@ -89,12 +89,12 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                     _password = value!;
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 FlutterPwValidator(
                     onSuccess: () {
-                      print("matched");
+                      debugPrint("matched");
                     },
                     key: validatorKey,
                     width: 400,
@@ -105,13 +105,13 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                     uppercaseCharCount: 1,
                     lowercaseCharCount: 1,
                     specialCharCount: 1),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    bool _validate = _formKey.currentState!.validate();
-                    if (_validate) {
+                    bool validate = _formKey.currentState!.validate();
+                    if (validate) {
                       _formKey.currentState!.save();
                       String result =
                           "Username: $_username\nEmail: $_email\nPassword: $_password";
@@ -124,7 +124,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                       _formKey.currentState!.reset();
                     }
                   },
-                  child: Text("Login"),
+                  child: const Text("Login"),
                 ),
               ],
             ),

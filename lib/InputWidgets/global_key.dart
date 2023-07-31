@@ -7,13 +7,13 @@ class GlobalKeyUsage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Global Key Usage"),
+        title: const Text("Global Key Usage"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Button Tap Counter"),
+            const Text("Button Tap Counter"),
             CounterWidget(
               key: counterWidgetKey,
             ),
@@ -24,7 +24,7 @@ class GlobalKeyUsage extends StatelessWidget {
         onPressed: () {
           counterWidgetKey.currentState!._incrase();
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

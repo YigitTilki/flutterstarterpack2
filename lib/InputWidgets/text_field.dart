@@ -32,7 +32,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: TextField(
               controller: _emailController,
               keyboardType: TextInputType.emailAddress,
@@ -41,9 +41,9 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
               decoration: InputDecoration(
                   labelText: "Label Text",
                   hintText: " +90 Phone Number",
-                  prefixIcon: Icon(Icons.phone),
-                  suffixIcon: Icon(Icons.ac_unit_rounded),
-                  border: OutlineInputBorder(
+                  prefixIcon: const Icon(Icons.phone),
+                  suffixIcon: const Icon(Icons.ac_unit_rounded),
+                  border: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(8),
                     ),
@@ -54,13 +54,13 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: TextField(
               onSubmitted: (String value) {
-                print("Submit" + value);
+                debugPrint("Submit $value");
               },
               onChanged: (String value) {
-                print(value);
+                debugPrint(value);
               },
               keyboardType: TextInputType.emailAddress,
               textInputAction: TextInputAction.go,

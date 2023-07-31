@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class OtherFormElements extends StatefulWidget {
-  OtherFormElements({super.key});
+  const OtherFormElements({super.key});
 
   @override
   State<OtherFormElements> createState() => _OtherFormElementsState();
@@ -12,16 +12,17 @@ class _OtherFormElementsState extends State<OtherFormElements> {
   String city = "";
   String selectedColor = "Red";
   List<String> cityList = ["Ankara", "Istanbul", "Tekirdag", "Kocaeli"];
+  // ignore: non_constant_identifier_names
   String SelectedCity = "Ankara";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Other Form Elements"),
+        title: const Text("Other Form Elements"),
       ),
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: ListView(
           children: [
             CheckboxListTile(
@@ -40,7 +41,7 @@ class _OtherFormElementsState extends State<OtherFormElements> {
                   city = value!;
                 });
               },
-              title: Text("Ankara"),
+              title: const Text("Ankara"),
             ),
             RadioListTile(
               value: "Istanbul",
@@ -50,7 +51,7 @@ class _OtherFormElementsState extends State<OtherFormElements> {
                   city = value!;
                 });
               },
-              title: Text("Istanbul"),
+              title: const Text("Istanbul"),
             ),
             RadioListTile(
               value: "Tekirdag",
@@ -60,21 +61,21 @@ class _OtherFormElementsState extends State<OtherFormElements> {
                   city = value!;
                 });
               },
-              title: Text("Tekirdag"),
+              title: const Text("Tekirdag"),
             ),
             DropdownButton<String>(
-              items: [
+              items: const [
                 DropdownMenuItem(
-                  child: Text("Red"),
                   value: "Red",
+                  child: Text("Red"),
                 ),
                 DropdownMenuItem(
-                  child: Text("Yellow"),
                   value: "Yellow",
+                  child: Text("Yellow"),
                 ),
                 DropdownMenuItem(
-                  child: Text("Blue"),
                   value: "Blue",
+                  child: Text("Blue"),
                 ),
               ],
               onChanged: (String? selected) {
@@ -82,15 +83,15 @@ class _OtherFormElementsState extends State<OtherFormElements> {
                   selectedColor = selected!;
                 });
               },
-              hint: Text("Select"),
+              hint: const Text("Select"),
               value: selectedColor,
             ),
             DropdownButton(
               items: cityList.map(
                 (currentCity) {
                   return DropdownMenuItem<String>(
-                    child: Text(currentCity),
                     value: currentCity,
+                    child: Text(currentCity),
                   );
                 },
               ).toList(),

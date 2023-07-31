@@ -19,7 +19,6 @@ class _StepperWidgetState extends State<StepperWidget> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
@@ -29,7 +28,7 @@ class _StepperWidgetState extends State<StepperWidget> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Stepper Example"),
+        title: const Text("Stepper Example"),
       ),
       body: SingleChildScrollView(
         child: Stepper(
@@ -57,13 +56,13 @@ class _StepperWidgetState extends State<StepperWidget> {
   List<Step>? _allSteps() {
     List<Step> steps = [
       Step(
-        title: Text("Enter Username"),
-        subtitle: Text("UsernameSubtitle"),
+        title: const Text("Enter Username"),
+        subtitle: const Text("UsernameSubtitle"),
         state: _setUpStates(0)!,
         isActive: true,
         content: TextFormField(
           key: key0,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
               border: OutlineInputBorder(),
               labelText: "UsernameLabel",
               hintText: "UsernameHint"),
@@ -71,6 +70,7 @@ class _StepperWidgetState extends State<StepperWidget> {
             if (enteredValue!.length < 6) {
               return "Enter at least 6 characters";
             }
+            return null;
           },
           onSaved: (enteredValue) {
             name = enteredValue;
@@ -78,13 +78,13 @@ class _StepperWidgetState extends State<StepperWidget> {
         ),
       ),
       Step(
-        title: Text("Enter Mail Adress"),
-        subtitle: Text("MailSubtitle"),
+        title: const Text("Enter Mail Adress"),
+        subtitle: const Text("MailSubtitle"),
         state: _setUpStates(1)!,
         isActive: true,
         content: TextFormField(
           key: key1,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
               border: OutlineInputBorder(),
               labelText: "MailLabel",
               hintText: "MailHint"),
@@ -92,6 +92,7 @@ class _StepperWidgetState extends State<StepperWidget> {
             if (enteredValue!.length < 6 || !enteredValue.contains("@")) {
               return "Enter valid e-mail adress";
             }
+            return null;
           },
           onSaved: (enteredValue) {
             mail = enteredValue;
@@ -99,13 +100,13 @@ class _StepperWidgetState extends State<StepperWidget> {
         ),
       ),
       Step(
-        title: Text("Enter Password"),
-        subtitle: Text("PasswordSubtitle"),
+        title: const Text("Enter Password"),
+        subtitle: const Text("PasswordSubtitle"),
         state: _setUpStates(2)!,
         isActive: true,
         content: TextFormField(
           key: key2,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
               border: OutlineInputBorder(),
               labelText: "PasswordLabel",
               hintText: "PasswordHint"),
@@ -113,6 +114,7 @@ class _StepperWidgetState extends State<StepperWidget> {
             if (enteredValue!.length < 6) {
               return "Enter at least 6 characters";
             }
+            return null;
           },
           onSaved: (enteredValue) {
             password = enteredValue;
@@ -130,8 +132,9 @@ class _StepperWidgetState extends State<StepperWidget> {
       } else {
         return StepState.editing;
       }
-    } else
+    } else {
       return StepState.complete;
+    }
   }
 
   void _continueButtonController() {
